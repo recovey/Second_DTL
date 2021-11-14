@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>余华最后一本作品：</h3>
+    <p>
+        {{ list_book|last }}
+    </p>
+    <h3>余华第一本书籍：</h3>
+    <p>
+        {{ list_book|first }}
+        {{ list_book.0 }}
+    </p>
+    <h4>余华共有{{ list_book|length }}本书籍</h4>
+    <p>{{ bookss|default:"没有找到这本书籍~！" }}</p>
+    <p>{{ list_book.1|default:"没有找到这本书籍~！" }}</p>
+    <h4>现在时间是：{{ nowtime|date:"Y/m/d" }}</h4>
+    <h5>书籍的大小是：{{ booksize|filesizeformat }}</h5>
+    <h5>截断：{{ speak|truncatechars:5 }}</h5>
+    <h5>安全不安全：{{ context|safe }}</h5>
+    <h5>价格上升50元，现价： {{ list_book.0.price|add:"50" }}</h5>
+</body>
+</html>

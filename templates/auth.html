@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>用户：{{ name }}</p>
+    <p>年龄：{{ age }}</p>
+    <p>婚否：{{ is_married }}</p>
+    <p>
+        四大名著：{{ book_list }}
+    </p>
+    <p>四大名著第一本：{{ book_list.0 }}</p>
+    <p>四大名著第二本：{{ book_list.1 }}</p>
+    <p>四大名著第三本：{{ book_list.2 }}</p>
+    <p>四大名著第四本：{{ book_list.3 }}</p>
+    <p>
+        {{ zhangsan.name }}
+        {{ zhangsan.age }}
+    </p>
+    <h3>
+        余华作品
+    </h3>
+    <p>{{ list_book.0.title }}  {{ list_book.0.price }}</p>
+    <p>{{ list_book.1.title }}  {{ list_book.1.price }}</p>
+    <p>{{ list_book.2.title }}  {{ list_book.2.price }}</p>
+</body>
+</html>
