@@ -16,7 +16,7 @@ def index(request):
     # html = template.render(context, request)
     # print(":::", html)
     # return HttpResponse(html)
-    return render(request, "index.html", {"name": "zhangsan"})
+    return render(request, "app01/index.html", {"name": "zhangsan"})
 
 
 class Book():
@@ -38,7 +38,7 @@ def auth(request):
     book2 = Book("活着", "69.9")
     book3 = Book("我们生活在巨大的差距里", "49.9")
     list_book = [book1, book2, book3]
-    return render(request, "auth.html", locals())
+    return render(request, "app01/auth.html", locals())
 
 
 def filter(request):
@@ -50,10 +50,10 @@ def filter(request):
     booksize = 15555555
     speak = "i love you ~"
     context = "<script>alert(123)</script>"
-    return render(request, "filter.html", locals())
+    return render(request, "app01/filter.html", locals())
 
 
 def me_filter(request):
     """自定义过滤器 filters"""
     moblie_number = "13312345678"
-    return render(request, "mefilter.html", locals())
+    return render(request, "app01/mefilter.html", locals())

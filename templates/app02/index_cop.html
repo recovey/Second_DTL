@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if age > 18 %}
+        <h4>欢迎回来</h4>
+    {% else %}
+        <h4>你还未成年，不能观看</h4>
+    {% endif %}
+
+<div>
+    <h4>成绩：
+        {% if grade > 90 %}
+            优秀
+        {% elif grade > 70 %}
+            合格
+        {% elif grade >= 60 %}
+            及格
+        {% else %}
+            不及格
+        {% endif %}
+    </h4>
+</div>
+<h4>四大名著</h4>
+<ul>
+    {% for book in book_list %}
+        <li>{{ book }}</li>
+    {% endfor %}
+</ul>
+
+<table border="1" width="800" >
+    <th>序号</th>
+    <th>名称</th>
+    <th>价格</th>
+    <th>出版社</th>
+    {% for book in list_book %}
+        {% if forloop.first %}
+            <tr style="background-color: pink">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.position }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.position }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+<h4>书本价格超过50元，底色变粉红色</h4>
+<table border="1" width="800">
+    <th>序号</th>
+    <th>名称</th>
+    <th>价格</th>
+    <th>出版社</th>
+    {% for book in list_book %}
+        {% if book.price > 50 %}
+            <tr style="background-color: pink">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.position }}</td>
+            </tr>
+        {% else %}
+            <tr>
+               <td>{{ forloop.counter }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.position }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% include "app02/ad.html" %}
+</body>
+</html>
